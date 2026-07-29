@@ -29,8 +29,8 @@ function renderBookDetails(book){
   `
 }
 
-function addToCartAndRedirect(bookId,title,price){
-  addToCart(bookId,title,price);
+function addToCartAndRedirect(bookId,title,price,image){
+  addToCart(bookId,title,price,image);
   setTimeout(()=>{
             window.location.href="index.html"
         },500)
