@@ -24,7 +24,7 @@ function renderBookDetails(book){
     <p>${book.price}</p>
     <p>${book.description}</p>
     <p>stock:  ${book.stock}</p>
-    <button onclick="addToCartAndRedirect('${book._id}','${book.title}',${book.price})">Add to cart</button>
+    <button onclick="addToCartAndRedirect('${book._id}','${book.title}',${book.price},'${book.image}')">Add to cart</button>
   
   `
 }
