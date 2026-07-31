@@ -18,7 +18,7 @@ const register = async(req,res)=>{
 
         let otp = Math.floor(100000 + Math.random()*900000)
         const otpExpiry = new Date(Date.now() + 10*60*1000)
-        const isVerified = false;
+        const isVerified = true;
 
          const newUser = await User.create({ name , email , password : hashedPassword , role , otp , otpExpiry ,isVerified})
 

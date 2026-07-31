@@ -15,7 +15,7 @@ if(registerForm){
         });
         const data = await res.json();
         if(res.ok){
-            showToast('verify your account');
+            showToast('Registered Successfully! please log in.');
             setTimeout(() => {
             window.location.href = `verify-otp.html?email=${encodeURIComponent(email)}`
              }, 500); 
