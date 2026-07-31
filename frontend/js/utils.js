@@ -1,5 +1,5 @@
-const auth_url = 'http://localhost:3000/api/auth'
-const books_url = 'http://localhost:3000/api/books'
+const auth_url = '/api/auth'
+const books_url = '/api/books'
 
 function showToast(message) {
 
