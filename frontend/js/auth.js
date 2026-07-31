@@ -17,7 +17,7 @@ if(registerForm){
         if(res.ok){
             showToast('Registered Successfully! please log in.');
             setTimeout(() => {
-            window.location.href = `verify-otp.html?email=${encodeURIComponent(email)}`
+            window.location.href = 'login.html'
              }, 500); 
         }else {
             showToast (data.message);
