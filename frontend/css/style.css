@@ -776,3 +776,21 @@ header nav a,
   height: 20px;
   pointer-events: none;
 }
+/* ---------------------------------------------------------------------
+   #username — welcome badge, matches the comic sticker language
+   ------------------------------------------------------------------ */
+
+#username{
+  display: inline-flex;
+  align-items: center;
+  background: var(--panel);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  padding: 0.6rem 1.1rem;
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: rotate(-1deg);
+}

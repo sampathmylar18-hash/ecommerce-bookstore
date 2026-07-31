@@ -24,15 +24,13 @@ function renderBookDetails(book){
     <p>${book.price}</p>
     <p>${book.description}</p>
     <p>stock:  ${book.stock}</p>
-    <button onclick="addToCartAndRedirect('${book._id}','${book.title}',${book.price},'${book.image}')">Add to cart</button>
+    <button onclick="addToCartAndRedirect('${book._id}','${book.title}',${book.price},'${book.image}',${book.stock})">Add to cart</button>
   
   `
 }
 
-function addToCartAndRedirect(bookId,title,price,image){
-  addToCart(bookId,title,price,image);
-  setTimeout(()=>{
-            window.location.href="index.html"
-        },500)
+function addToCartAndRedirect(bookId,title,price,image,stock){
+  addToCart(bookId,title,price,image,stock);
+
 }
 fetchBookDetail();

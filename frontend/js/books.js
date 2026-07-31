@@ -21,7 +21,8 @@ function renderPagination(booksArray){
     <button id="next">next</button>
     `
 
-        document.getElementById("previous").addEventListener('click', () => {
+        document.getElementById("previous").addEventListener('click', ()=>{
+          
             if (currentPage > 1) {
                 currentPage--;
                 renderBooks(getBooksForCurrentPage());
@@ -49,14 +50,20 @@ async function fetchBooks(){
         renderBooks(getBooksForCurrentPage());
         renderFeaturedBooks(allBooks)
         renderPagination(allBooks)
+        renderUsername();
     }catch(e){
         console.error('error while fetching books',e);
     }
 }
-
+function renderUsername(){
+    const name = localStorage.getItem('name');
+    const usernameEl = document.getElementById('username');
+    if(usernameEl){
+        usernameEl.innerHTML = name ? `welcome, ${name}` :  document.getElementById('username').remove();    }
+}
 function renderBooks(books){
-    const container = document.getElementById('book-list');
-    container.innerHTML = books.map(book =>`
+        const container = document.getElementById('book-list');
+        container.innerHTML = books.map(book =>`
         <div class="book-card">
         <a href="book.html?id=${book._id}">
         <img src="${book.image || 'https://via.placeholder.com/150'}" alt="${book.title}">
@@ -64,7 +71,7 @@ function renderBooks(books){
         <p>${book.author}</p>
         <p>${book.price}</p>
         </a>
-        <button onclick ="addToCart('${book._id}','${book.title}',${book.price} ,'${book.image}')">Add to Cart</button>
+        <button onclick ="addToCart('${book._id}','${book.title}',${book.price} ,'${book.image}',${book.stock})">Add to Cart</button>
         </div>
     `).join('');
 
@@ -80,7 +87,7 @@ function renderFeaturedBooks(books){
         <p>${book.author}</p>
         <p>${book.price}</p>
         </a>
-        <button onclick ="addToCart('${book._id}','${book.title}',${book.price} ,'${book.image}')">Add to Cart</button>
+        <button onclick ="addToCart('${book._id}','${book.title}',${book.price} ,'${book.image}',${book.stock})">Add to Cart</button>
         </div>
         `).join('')
 }

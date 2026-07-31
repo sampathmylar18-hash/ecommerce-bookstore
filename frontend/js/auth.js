@@ -45,6 +45,7 @@ if(loginForm){
             if(res.ok){
                 localStorage.setItem('token',data.token);
                 localStorage.setItem('role',data.role);
+                localStorage.setItem('name',data.name)
                 showToast("Successful Login")
                 setTimeout(() => {
                 window.location.href = 'index.html'
