@@ -9,7 +9,7 @@ function renderCart(){
     
     if(cart.length === 0 ){
         container.innerHTML='<p> Your cart is empty.<p>';
-        document.getElementById('cart-total').textContent = '';
+        document.getElementById('cart-total').remove()
         return;
     }
 

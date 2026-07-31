@@ -107,7 +107,7 @@ header h1 {
 }
 
 header h1::before {
-  content: "WELCOME, READER";
+  content: "WASSUP, READER";
   display: block;
   background: var(--burst-yellow);
   border: 2.5px solid var(--ink);
@@ -775,22 +775,33 @@ header nav a,
   width: 20px;
   height: 20px;
   pointer-events: none;
-}
+}/* ---------------------------------------------------------------------
+   #username — quiet dashboard-style greeting, sits beside the nav
+   ------------------------------------------------------------------ */
 /* ---------------------------------------------------------------------
-   #username — welcome badge, matches the comic sticker language
+   #username — rotated comic sticker, dashboard-style greeting
    ------------------------------------------------------------------ */
 
-#username{
+#username {
   display: inline-flex;
   align-items: center;
-  background: var(--panel);
+  gap: 0.3rem;
+  background: var(--burst-yellow);
   color: var(--ink);
-  border: 3px solid var(--ink);
-  padding: 0.6rem 1.1rem;
+  border: 2.5px solid var(--ink);
+  padding: 0.5rem 0.9rem;
   font-family: var(--font-label);
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
+  font-size: 0.66rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   box-shadow: 3px 3px 0 var(--ink);
-  transform: rotate(-1deg);
+  transform: rotate(-2deg);
+}
+
+#username strong {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
